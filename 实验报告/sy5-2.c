@@ -4,7 +4,7 @@ int main(int argc, char const *argv[])
 {
     char s1[100], s2[100], res[50];
     int i = 0, j = 0;
-    gets(s1); u
+    gets(s1);
     gets(s2);
     while (s1[i] != ' ')
     {

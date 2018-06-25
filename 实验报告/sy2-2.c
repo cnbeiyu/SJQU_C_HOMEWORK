@@ -8,7 +8,6 @@ int main(int argc, char const *argv[])
 	scanf("%d", &a);
 	while (x / 10 != 0)
 	{
-		//printf("%d\n", a % (10 ^ n));
 		i = x % 10;
 		if (i == a)
 			n++;
