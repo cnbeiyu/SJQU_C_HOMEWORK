@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<math.h>
+
+double getAvg(int a[],int n)
+{
+int i,sum=0;
+float avg;
+
+for(i=0;i<n;i++)
+sum+=a[i];
+avg=(1.0*sum)/n;
+return avg;
+}
+int getIndex(int a[],int n,double x)
+{
+int i,xiabiao;
+double temp;
+temp=fabs(a[0]-x);
+for(i=1;i<n;i++)
+{
+if(fabs(a[i]-x)<temp)
+{
+temp=fabs(a[i]-x);
+xiabiao=i;
+}
+}
+return xiabiao;
+}
+int main()
+{
+int a[100],n,i;
+printf("请输入数组元素个数:\n");
+while (!scanf("%d",&n))
+{
+  fflush(stdin);
+  printf("输入错误，请输入一个整数:\n");
+}
+printf("请输入数组:\n");
+for(i=0;i<n;i++)
+//scanf("%d",&a[i]);
+while (!scanf("%d",&a[i]))
+{
+  fflush(stdin);
+  printf("输入错误，请输入一个整数:\n");
+}
+printf("平均数:%f\n",getAvg(a,n));
+printf("最接近下标:%d\n",getIndex(a,n,getAvg(a,n)));
+return 0;
+}
